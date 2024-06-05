@@ -1,0 +1,34 @@
+package org.big.dao;
+
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import org.big.entity.BoardDto;
+
+public class BoardDao {
+	
+	DataSource dataFactory; //네이밍 불러오기
+	
+	public BoardDao() {
+		// TODO Auto-generated constructor stub
+		try {
+			
+			Context ctx = new InitialContext(); //Context(부모):  server에 있는 context.xml에 있는 태그(클래스)
+												//InitialContext(자식)
+			dataFactory = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle11"); //java: comp(비교) env(환경설정) jdbc(이름) oracle11(값)
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<BoardDto> board() {
+		ArrayList<BoardDto> list = new ArrayList<>();
+		
+		return list;
+	}
+
+}

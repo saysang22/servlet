@@ -1,0 +1,33 @@
+package org.big.dao;
+
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import org.big.entity.BoardDto;
+
+public class BoardDao {
+	
+	DataSource dataFactory;
+	
+	public BoardDao() {
+		// TODO Auto-generated constructor stub
+		try {
+			
+			Context ctx = new InitialContext();
+			dataFactory = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle11");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<BoardDto> board() {
+		ArrayList<BoardDto> list = new ArrayList<>();
+		
+		return list;
+	}
+
+}

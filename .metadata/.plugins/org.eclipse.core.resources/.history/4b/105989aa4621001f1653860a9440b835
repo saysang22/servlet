@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.wrap {
+		display: flex;
+	}
+	
+	.rightMargin {
+		margin: 0 0 1rem 0;
+	}
+</style>
+</head>
+<body>
+	<form method="post" action="empInsert" name="insert">
+		<fieldset>
+			<legend>emp 테이블 데이터 입력 폼</legend>
+		<div class="wrap">
+			<ul class="rightMargin">
+				<li><label for="empno">사원 번호</label></li>
+				
+			</ul>
+			<ul>
+				<li><input type="text" name="empno"></li>
+			</ul>
+		</div>
+		</fieldset>
+	</form>
+</body>
+</html>

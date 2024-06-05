@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "com.oreilly.servlet.*" %>
+<%@ page import = "com.oreilly.servlet.multipart.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일업로드 프로세스</title>
+</head>
+<body>
+	<%
+		MultipartRequest mu = new MultipartRequest(
+				request,
+				"d:/upload",
+				5*1024*1024,
+				"utf-8",
+				new DefaultFileRenamePolicy()
+				);
+	
+		String name = mu.getParameter("file_name");
+		String fileName = mu.getFilesystemName("file_name");
+		String saveName = mu.getOriginalFileName("file_name");
+		String contentName = mu.getContentType("file_name");
+		
+	%>
+	
+	<div>
+		요청 파라미터 이름 : <%= name %>
+	</div>
+	<div>
+		실제 파일 이름 : <%= fileName %>
+	</div>
+	<div>
+		저장 파일 이름 : <%= saveName %>
+	</div>
+	<div>
+		파일 콘텐츠 유형 : <%= contentName %>
+	</div>
+</body>
+</html>

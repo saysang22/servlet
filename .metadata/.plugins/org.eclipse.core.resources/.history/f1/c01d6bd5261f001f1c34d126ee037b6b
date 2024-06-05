@@ -1,0 +1,6 @@
+
+let btnEv = document.querySelector(".btnEv");
+
+function btnEv() {
+	alert("제출완료");
+}

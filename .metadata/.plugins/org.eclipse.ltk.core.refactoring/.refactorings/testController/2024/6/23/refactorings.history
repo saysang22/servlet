@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.big.RequestRedirect&apos; to &apos;RequestRedirectServlet&apos;&#x0D;&#x0A;- Original project: &apos;testController&apos;&#x0D;&#x0A;- Original element: &apos;org.big.RequestRedirect&apos;&#x0D;&#x0A;- Renamed element: &apos;org.big.RequestRedirectServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RequestRedirect&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;org.big{RequestRedirect.java[RequestRedirect" matchStrategy="1" name="RequestRedirectServlet" qualified="false" references="true" similarDeclarations="false" stamp="1717398462050" textual="false" version="1.0"/>
+</session>

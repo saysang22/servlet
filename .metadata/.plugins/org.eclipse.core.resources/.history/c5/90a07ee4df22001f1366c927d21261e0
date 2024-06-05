@@ -1,0 +1,127 @@
+package org.big.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import org.big.entity.BoardDto;
+
+public class BoardDao {
+	
+	DataSource dataFactory; //네이밍 불러오기
+	
+	public BoardDao() {
+
+		//DB 연결
+		try {
+			
+			Context ctx = new InitialContext(); //Context(부모):  server에 있는 context.xml에 있는 태그(클래스)
+												//InitialContext(자식)
+			dataFactory = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle11"); //java: comp(비교) env(환경설정) jdbc(이름) oracle11(값)
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//BoardDto에 있는 멤버 변수 보기 위해
+	public ArrayList<BoardDto> list() {
+		ArrayList<BoardDto> list = new ArrayList<>();
+		Connection conn = null; //연결
+		PreparedStatement pstmt = null; //쿼리써서 받는것
+		ResultSet rs = null; //쿼리 실행결과가 담기는 클래스 select 일때만
+		
+		try {
+			
+			conn = dataFactory.getConnection();
+			String query = "SELECT num, author, title, content, to_char(writeday, 'YYYY/MM/DD') as writeday, readcnt, reproot, repstep, repindent FROM board ORDER BY reproot desc, repstep asc";
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery(); //select는 무조건 executeQuery
+			
+			while(rs.next()) { //무한대 데이터 읽어오기
+				int num = rs.getInt("num"); 
+				String author = rs.getString("author"); 
+				String title = rs.getString("title"); 
+				String content = rs.getString("content"); 
+				String writeday = rs.getString("writeday"); 
+				int readcnt = rs.getInt("readcnt"); 
+				int reproot = rs.getInt("reproot"); 
+				int repstep = rs.getInt("repstep"); 
+				int repindent = rs.getInt("repindent"); 
+				
+				BoardDto data = new BoardDto();
+				
+				data.setNum(num);
+				data.setAuthor(author);
+				data.setTitle(title);
+				data.setContent(content);
+				data.setWriteday(writeday);
+				data.setReadcnt(readcnt);
+				data.setReproot(reproot);
+				data.setRepstep(repstep);
+				data.setRepindent(repindent);
+				
+				list.add(data);
+				
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return list;
+	}
+
+	public void write(String _title, String _author, String _content) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			conn = dataFactory.getConnection(); //DB하고 연결
+			String query = "INSERT INTO board(num, title, author, content, reproot, repstep, repindent) VALUES (board_seq.nextVal, ?, ?, ?, board_seq.currval, 0, 0)";
+			pstmt = conn.prepareStatement(query); //쿼리 입력
+			
+			//입력순서
+			pstmt.setString(1, _title);
+			pstmt.setString(2, _author);
+			pstmt.setString(3, _content);
+			
+			int n = pstmt.executeUpdate(); //실행이 정상적으로 되면 1 아니면 0
+			System.out.println("저장상태확인(1: true, 0: false): " + n);
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void readCount(String _num) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+	}
+}

@@ -1,0 +1,33 @@
+function CheckAddBook() {
+	let bookId = document.querySelector("#bookId");
+	let name = document.querySelector("#name");
+	let unitPrice = document.querySelector("#unitPrice");
+	let unitsInStock = document.querySelector("#unitsInStock");
+	let description = document.querySelector("#description");
+	
+	let regId = /^ISBN[0-9]{4,1}$/;
+	
+	let idMsg = "도서 코드 \nISBN과 숫자를 조합하여 5~12자까지 입력하세요\n첫 글자는 반드시 ISBN로 시작하세요";
+	
+	//도서 아이디 체크
+	if(!check(regId, bookId, idMsg)) return false;
+	
+	if(name.value.length < 4 || name.value.length > 50) {
+		alert("")
+	}
+	
+	
+	
+	function check(regExp, e, msg) {
+		if(regExp.test(e.value)) {
+			return true;
+		}
+		
+		alert(msg);
+		e.focus();
+		return false;
+	}
+	
+	document.newBook.submit();
+	
+}

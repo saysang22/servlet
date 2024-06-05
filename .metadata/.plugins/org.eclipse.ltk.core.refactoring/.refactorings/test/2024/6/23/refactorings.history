@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;big&apos;&#x0D;&#x0A;- Original project: &apos;test&apos;&#x0D;&#x0A;- Destination element: &apos;big&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     DeptListCommand.java&#x0D;&#x0A;     DeptFrontController.java&#x0D;&#x0A;     DeptDao.java&#x0D;&#x0A;     DeptCommand.java&#x0D;&#x0A;     DeptDto.java" description="Copy compilation units" element1="/src\/main\/java&lt;{DeptListCommand.java" element2="/src\/main\/java&lt;{DeptFrontController.java" element3="/src\/main\/java&lt;{DeptDao.java" element4="/src\/main\/java&lt;{DeptCommand.java" element5="/src\/main\/java&lt;{DeptDto.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1717475963199" target="/controllerMVC/src/main/java/org/big" units="5" version="1.0"/>
+</session>

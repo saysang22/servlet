@@ -1,0 +1,7 @@
+function CheckAddBook() {
+	let bookId = document.querySelector("#bookId");
+	let name = document.querySelector("#name");
+	let unitPrice = document.querySelector("#unitPrice");
+	let unitsInStock = document.querySelector("#unitsInStock");
+	let description = document.querySelector("#description");
+}

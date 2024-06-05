@@ -1,0 +1,30 @@
+package org.big;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class empSelectServlet extends HttpServlet{
+	public empSelectServlet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		doPost(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		resp.setContentType("html/text; charset=UTF-8");
+		
+		PrintWriter pr = resp.getWriter();
+	}
+}
