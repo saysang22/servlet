@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+<style>
+	ul {
+		list-style: none;
+	}
+</style>
+</head>
+<body>
+	<h1>공지사항</h1>
+	<ul>
+		<li>1교시 : 자습</li>
+		<li>2교시 : 필기 문제</li>
+		<li>3교시 : 필기 문제</li>
+		<li>4교시 : 실기 문제</li>
+		<li>5교시 : 실기 문제</li>
+		<li>6교시 : 혼공자</li>
+		<li>7교시 : 혼공자</li>
+		<li>8교시 : 혼공자</li>
+	</ul>
+	<input type="button" value="창닫기" onclick="window.close()">
+</body>
+</html>
