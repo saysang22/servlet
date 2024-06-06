@@ -8,6 +8,7 @@ import org.big.entity.BoardDto;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+//검색 서비스
 public class BoardSearchService implements BoardService{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) {
