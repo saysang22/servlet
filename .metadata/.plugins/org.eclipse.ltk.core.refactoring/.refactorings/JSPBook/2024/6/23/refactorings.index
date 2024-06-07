@@ -6,3 +6,10 @@
 1717634651280	Move 'resources' to 'main'
 1717634723639	Move 'validationExample.css' to 'ch08'
 1717634753873	Delete element
+1717725831281	Rename resource 'myBundle'
+1717725858248	Delete element
+1717730686979	Copy file
+1717745037157	Rename resource 'exception_process.jsp'
+1717745147519	Rename resource 'errorCode_error.jsp'
+1717745571019	Rename resource 'errorCode_error.jsp'
+1717746513696	Rename resource 'errorCode_error_process.jsp'
