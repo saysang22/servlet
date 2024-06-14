@@ -219,3 +219,14 @@
 0:0:0:0:0:0:0:1 - admin [07/Jun/2024:17:09:46 +0900] "GET /BookMarket/book.jsp HTTP/1.1" 500 2646
 0:0:0:0:0:0:0:1 - admin [07/Jun/2024:17:09:48 +0900] "GET /BookMarket/book.jsp HTTP/1.1" 500 2646
 0:0:0:0:0:0:0:1 - admin [07/Jun/2024:17:09:55 +0900] "GET /BookMarket/book.jsp HTTP/1.1" 200 1603
+127.0.0.1 - - [07/Jun/2024:17:10:49 +0900] "GET / HTTP/1.1" 404 808
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:10:50 +0900] "GET /BookMarket/book.jsp HTTP/1.1" 200 1603
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:11:12 +0900] "GET /BookMarket/book.jsp HTTP/1.1" 200 1603
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:11:12 +0900] "GET /favicon.ico HTTP/1.1" 404 819
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:11:50 +0900] "GET /BookMarket/bookList.jsp HTTP/1.1" 404 1186
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:12:52 +0900] "GET /BookMarket/bookList.jsp HTTP/1.1" 404 1253
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:13:11 +0900] "GET /BookMarket/books.jsp HTTP/1.1" 200 3249
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:13:11 +0900] "GET /BookMarket/resources/images/ISBN1235.jpg HTTP/1.1" 200 98097
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:13:11 +0900] "GET /BookMarket/resources/images/ISBN1234.jpg HTTP/1.1" 200 55574
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:13:11 +0900] "GET /BookMarket/resources/images/ISBN1236.jpg HTTP/1.1" 200 38157
+0:0:0:0:0:0:0:1 - - [07/Jun/2024:17:13:24 +0900] "GET /BookMarket/book.jsp?id=ISBN1234 HTTP/1.1" 200 1567

@@ -1,6 +1,8 @@
 package dto;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable{
 	private static final long serialVersionUID= -4274700572038677000L;
 	
 	private String bookId;
@@ -14,6 +16,7 @@ public class Book {
 	private String releaseDate;
 	private String condition;
 	private String filename;
+	private int quantity; //장바구니에 담은 개수
 	
 	public Book() {
 		super();
@@ -112,5 +115,11 @@ public class Book {
 		this.filename = filename;
 	}
 	
-	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 }

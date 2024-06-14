@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="idCkWrap"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="text-end"/>
+			<item value="signUp"/>
+			<item value="signup"/>
 			<item value="idCkWrap"/>
 			<item value="unitPrice"/>
 			<item value="aa"/>

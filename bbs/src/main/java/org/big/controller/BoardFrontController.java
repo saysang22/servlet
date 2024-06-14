@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import org.big.service.BoardDeleteService;
 import org.big.service.BoardListService;
+import org.big.service.BoardPageService;
+import org.big.service.BoardReplyService;
+import org.big.service.BoardReplyuiService;
 import org.big.service.BoardRetreveService;
 import org.big.service.BoardSearchService;
 import org.big.service.BoardService;
@@ -39,9 +42,9 @@ public class BoardFrontController extends HttpServlet {
 		String nextPage = null;
 		
 		if(com.equals("/list.do")) {
-			service = new BoardListService();
+			service = new BoardPageService();
 			service.execute(req, resp);
-			nextPage = "list.jsp";
+			nextPage = "listPage.jsp";
 		}
 		
 		//글쓰기 form url
@@ -81,6 +84,19 @@ public class BoardFrontController extends HttpServlet {
 			nextPage = "list.jsp";
 		}
 		
+		if(com.equals("/replyui.do")) {
+			service = new BoardReplyuiService();
+			service.execute(req, resp);
+			nextPage = "reply.jsp";
+		}
+		
+		if(com.equals("/reply.do")) {
+			service = new BoardReplyService();
+			service.execute(req, resp);
+			nextPage = "list.do";
+		}
+		
+		//뷰 페이지랑 연결
 		RequestDispatcher dis = req.getRequestDispatcher(nextPage);
 		dis.forward(req, resp);
 		

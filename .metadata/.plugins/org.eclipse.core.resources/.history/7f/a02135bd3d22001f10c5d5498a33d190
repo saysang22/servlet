@@ -1,7 +1,0 @@
-package org.big.entity;
-
-public class BoardDto {
-	
-	private int num;
-
-}
