@@ -48,7 +48,7 @@ public class DatabaseConfiguration {
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) throws Exception{
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
-	
+		
 	@Bean
 	@ConfigurationProperties(prefix = "mybatis.configuration")
 	public org.apache.ibatis.session.Configuration mybatisConfig(){
